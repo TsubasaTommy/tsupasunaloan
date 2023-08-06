@@ -117,6 +117,7 @@ const depositDebt = ()=>{
   debt.value -= inputdeposit
   localStorage.debt = debt.value
   addLog(-inputdeposit)
+  if(debt.value <= 0) addLog("🍆🎉✨ 返済完了 ✨🎉🐑")
 }
 //=====
 //Log
