@@ -127,8 +127,12 @@ const timestamp = ()=>{
   return time.getMonth()+"月"+time.getDate()+"日 "+time.getHours()+":"+time.getMinutes()
 }
 const addLog = value => {
+  if(logs.length > 200) logs.pop()
+    
   logs.unshift({value,time:timestamp()})
   localStorage.logs = JSON.stringify(logs)
+  
+
 }
 
 </script>
