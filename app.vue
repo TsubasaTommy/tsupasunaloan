@@ -116,7 +116,7 @@ const addDebt = ()=>{
 const depositDebt = ()=>{
   debt.value -= inputdeposit
   localStorage.debt = debt.value
-  addLog(inputdeposit)
+  addLog(-inputdeposit)
 }
 //=====
 //Log
