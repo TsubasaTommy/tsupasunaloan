@@ -3,7 +3,21 @@
   <Theheader />
   <main>
   <v-container>
-    <p>返済額 {{ debt.toLocaleString() }} <span v-show="debt">利息{{ratio}}%</span></p>
+    <v-row justify="center">
+      <v-col cols="3" >DEBT </v-col>
+      
+      <v-col cols="3">
+        <span v-show="debt">利息{{ratio}}%</span>
+    </v-col>
+  </v-row>
+    <v-divider />
+
+  <article>
+    <div class="text-h4 font-weight-black my-8
+">{{ debt.toLocaleString() }}</div>
+  </article>
+
+ 
       
     <v-text-field label="融資額" type="number" v-model="inputdebt" />
     
@@ -145,5 +159,20 @@ const addLog = value => {
 }
 .log_minus{
   background-color:#E6EE9C;
+}
+.bg {
+  background: linear-gradient(45deg, rgba(45,45,45,1) 9%,rgba(0,0,0,1) 100%);
+  width: 100%;
+  height: 100%;
+}
+article {
+  background: linear-gradient(
+    to right, 
+    hsl(300 100% 62%), 
+    hsl(00 80% 90%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 </style>
