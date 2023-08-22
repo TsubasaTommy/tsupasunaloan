@@ -111,7 +111,7 @@ let inputdeposit = 1000000;
 const firstAddDebt = () => {
   debt.value = Number(inputdebt);
   localStorage.debt = debt.value;
-  localStorage.ratio = inputratio;
+  localStorage.ratio = Number(inputratio);
   ratio = inputratio;
   addLog(inputdebt);
 };
