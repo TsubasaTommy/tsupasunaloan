@@ -9,6 +9,10 @@
           <v-col cols="3">
             <span v-show="debt">利息{{ ratio }}%</span>
           </v-col>
+
+          <v-col cols="4">
+            <span v-show="1" class="text-caption"><span >ログイン</span>{{ days }}日前</span>
+          </v-col>
         </v-row>
         <v-divider />
 
@@ -87,7 +91,6 @@ const days = parseInt(
 );
 let debt = ref(Number(localStorage.debt) || 0);
 let ratio = Number(localStorage.ratio) || 1;
-
 
 onMounted(() => {
   if (days > 0) {
