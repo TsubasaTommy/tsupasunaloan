@@ -98,7 +98,6 @@ onMounted(() => {
     localStorage.debt = debt.value;
     localStorage.date = new Date();
   }
-  console.log('mounted');
 });
 let logs = reactive([]);
 try {
