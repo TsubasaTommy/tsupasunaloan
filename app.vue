@@ -87,12 +87,16 @@ const days = parseInt(
 );
 let debt = ref(Number(localStorage.debt) || 0);
 let ratio = Number(localStorage.ratio) || 1;
-if (days > 0) {
-  debt.value *= (1 + ratio / 100) ** (days || 0);
-  localStorage.debt = debt.value;
-  localStorage.date = new Date();
-}
 
+
+onMounted(() => {
+  if (days > 0) {
+    debt.value *= (1 + ratio / 100) ** (days || 0);
+    localStorage.debt = debt.value;
+    localStorage.date = new Date();
+  }
+  console.log('mounted');
+});
 let logs = reactive([]);
 try {
   logs = JSON.parse(localStorage.logs);
